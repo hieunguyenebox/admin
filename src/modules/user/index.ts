@@ -11,18 +11,18 @@ export const findOneById = async (id: string) => {
 
 export const createAdmin = async () => {
 
-  const adminEmail = 'admin@admin.com'
+  const { DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD } = process.env
 
-  const exists = await UserModel.exists({ email: adminEmail })
+  const exists = await UserModel.exists({ email: DEFAULT_ADMIN_EMAIL })
 
   if (!exists) {
 
     const user: User = new UserModel
-    user.email = adminEmail
+    user.email = DEFAULT_ADMIN_EMAIL
 
     // create salt
     const salt = genSaltSync(10)
-    user.password = hashSync('admin@_@#123', salt)
+    user.password = hashSync(DEFAULT_ADMIN_PASSWORD, salt)
     user.name = 'admin'
     user.salt = salt
     user.save()
