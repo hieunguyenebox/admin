@@ -1,0 +1,11 @@
+scalar JSON
+scalar Date
+
+type Query {
+  me: User
+}
+
+type User {
+  id: String
+  name: String
+}
