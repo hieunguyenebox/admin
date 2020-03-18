@@ -1,5 +1,6 @@
 ### Admin template includes:
 
+- typescript
 - nextjs
 - expresss graphql
 - react-apollo
@@ -15,3 +16,9 @@
 3. signin
 
 Note: it just creates admin acc if not existed
+
+
+### Information
+
+- Session store uses mongodb
+- Using `module-alias` to create alias for import
