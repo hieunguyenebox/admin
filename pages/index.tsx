@@ -1,5 +1,5 @@
-import Home from "components/Home"
+import Dashboard from "components/Dashboard/Dashboard"
 
-const PageHome = Home
+const PageHome = Dashboard
 
 export default PageHome
